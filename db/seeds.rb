@@ -5,12 +5,12 @@ author = Author.create!(
     address:Faker::Address.full_address,
     phone:Faker::PhoneNumber.cell_phone_with_country_code
 )
-post = author.create_post!(
+post = author.posts.create!(
 title:Faker::Book.title,
 content:Faker::Quote.matz
 
 )
-post.create_category!(
+post.categories.create!(
 description:Faker::Book.genre,
 subscribers:Faker::Number.between(from: 100, to: 1000)
 )
